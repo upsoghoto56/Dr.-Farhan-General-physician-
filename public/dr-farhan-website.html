@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Farhan | General Physician</title>
+  <meta name="description" content="Trusted General Physician in Pakistan. In-Clinic & Online Consultations Available.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', sans-serif; background-color: #ffffff; color: #1e293b; }
+    h1, h2, h3, h4, h5, h6, .font-poppins { font-family: 'Poppins', sans-serif; }
+    
+    html { scroll-behavior: smooth; }
+    
+    /* Subtle fade in animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Horizontal scroll snapping for reviews */
+    .snap-x-container {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+    }
+    .snap-x-container::-webkit-scrollbar {
+      display: none; /* Chrome/Safari */
+    }
+    .snap-center {
+      scroll-snap-align: center;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#0a2342',
+            gold: '#f5a623'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="antialiased selection:bg-gold selection:text-navy">
+
+  <!-- 1. STICKY NAVIGATION BAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <a href="#home" class="flex-shrink-0 cursor-pointer text-navy font-poppins font-bold text-xl md:text-2xl hover:opacity-80 transition-opacity">
+          Dr. Farhan <span class="font-normal text-base md:text-lg text-slate-500 hidden sm:inline-block">| General Physician</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="#home" class="text-slate-600 hover:text-navy font-medium transition-colors">Home</a>
+          <a href="#services" class="text-slate-600 hover:text-navy font-medium transition-colors">Services</a>
+          <a href="#reviews" class="text-slate-600 hover:text-navy font-medium transition-colors">Reviews</a>
+          <a href="#contact" class="text-slate-600 hover:text-navy font-medium transition-colors">Contact</a>
+          <a href="#contact" class="bg-gold text-navy font-semibold px-6 py-2.5 rounded-full hover:bg-amber-400 transition-colors shadow-sm">
+            Book Appointment
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden flex items-center">
+          <button id="mobile-menu-btn" class="text-navy p-2 bg-slate-50 rounded-lg" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full">
+      <div class="px-4 pt-2 pb-6 space-y-2">
+        <a href="#home" class="mobile-link block w-full px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 rounded-lg">Home</a>
+        <a href="#services" class="mobile-link block w-full px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 rounded-lg">Services</a>
+        <a href="#reviews" class="mobile-link block w-full px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 rounded-lg">Reviews</a>
+        <a href="#contact" class="mobile-link block w-full px-4 py-3 text-slate-700 font-medium hover:bg-slate-50 rounded-lg">Contact</a>
+        <div class="pt-4 px-4">
+          <a href="#contact" class="mobile-link block w-full bg-gold text-navy font-bold px-4 py-3 rounded-xl shadow-sm text-center">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- 2. HERO SECTION -->
+    <section id="home" class="relative pt-28 pb-20 lg:pt-40 lg:pb-32 bg-navy overflow-hidden">
+      <!-- Background pattern -->
+      <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 fade-in">
+        <div class="max-w-3xl">
+          <h1 class="font-poppins text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight tracking-tight mb-6">
+            Your Health, <br/>
+            <span class="text-gold">Our Priority.</span>
+          </h1>
+          
+          <p class="text-lg sm:text-xl text-slate-300 font-medium mb-10 max-w-2xl leading-relaxed fade-in">
+            Trusted General Physician in Pakistan <br class="hidden sm:block"/>
+            <span class="text-white/80">In-Clinic & Online Consultations Available</span>
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mb-12 fade-in">
+            <a href="https://wa.me/923480403153?text=Hello%20Dr.%20Farhan%2C%20I%20would%20like%20to%20book%20an%20In-Clinic%20Appointment." target="_blank" class="bg-gold text-navy font-bold px-8 py-4 rounded-xl hover:bg-amber-400 transition-all shadow-lg hover:-translate-y-1 text-center flex items-center justify-center gap-2 group">
+              <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+              Book In-Clinic (PKR 2,000)
+            </a>
+            <a href="https://wa.me/923480403153?text=Hello%20Dr.%20Farhan%2C%20I%20would%20like%20to%20book%20a%20Video%20Consultation." target="_blank" class="bg-white/10 text-white border border-white/20 font-bold px-8 py-4 rounded-xl hover:bg-white/20 transition-all text-center flex items-center justify-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              Video Consultation (PKR 1,000)
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="flex flex-wrap items-center gap-6 sm:gap-8 text-sm text-slate-300 font-medium fade-in">
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-gold fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              <span class="text-white">4.9 Rating</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span class="text-white">46+ Happy Patients</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ABOUT SECTION -->
+    <section id="about" class="py-20 lg:py-32 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div class="fade-in">
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold text-navy mb-6">Meet Dr. Farhan</h2>
+            <div class="w-20 h-1.5 bg-gold rounded-full mb-8"></div>
+            <p class="text-lg text-slate-600 leading-relaxed mb-8">
+              Dr. Farhan is a certified General Physician known for his thorough checkups, warm bedside manner, and patient-first approach. He provides comprehensive consultations covering medicines, diet planning, physical exercise guidance, and mental health support. 
+              <br/><br/>
+              Patients consistently praise his kindness, professionalism, and ability to truly listen.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-5 fade-in">
+              <div class="bg-blue-50 text-navy p-3 rounded-xl shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-poppins font-bold text-xl text-navy mb-2">Thorough Diagnosis</h3>
+                <p class="text-slate-600">Comprehensive medical evaluation leaving no stone unturned for accurate treatment.</p>
+              </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-5 fade-in">
+              <div class="bg-amber-50 text-gold p-3 rounded-xl shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-poppins font-bold text-xl text-navy mb-2">Patient Listener</h3>
+                <p class="text-slate-600">Ample time dedicated to hearing and deeply understanding your health concerns.</p>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex items-start gap-5 fade-in">
+              <div class="bg-emerald-50 text-emerald-600 p-3 rounded-xl shrink-0">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              </div>
+              <div>
+                <h3 class="font-poppins font-bold text-xl text-navy mb-2">Holistic Treatment</h3>
+                <p class="text-slate-600">Integrating medication with diet, exercise, and mental well-being for complete care.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SERVICES SECTION -->
+    <section id="services" class="py-20 lg:py-32 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center md:text-left mb-16 fade-in">
+          <h2 class="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-navy mb-4">Consultation Services</h2>
+          <p class="text-lg text-slate-600 max-w-2xl">Choose the consultation method that works best for you and your health needs.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="fade-in bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div class="p-8 flex-grow">
+              <div class="bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block mb-6">Appointment Required</div>
+              <h3 class="font-poppins text-2xl font-bold text-navy mb-2">Medical Consultation</h3>
+              <div class="text-3xl font-bold text-navy mb-6 border-b border-slate-100 pb-6">PKR 2,000</div>
+              <p class="text-slate-600 leading-relaxed mb-8">Thorough checkup with patient and family. Best management plan including medicines, diet, physical exercise, and mental health.</p>
+            </div>
+            <div class="px-8 pb-8 mt-auto">
+              <a href="https://wa.me/923480403153?text=Hello%20Dr.%20Farhan%2C%20I%20would%20like%20to%20book%20a%20Medical%20Consultation%20(PKR%202%2C000)." target="_blank" class="block w-full bg-navy text-white font-semibold py-4 rounded-xl text-center group-hover:bg-blue-900 transition-colors">Book Now</a>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="fade-in bg-navy rounded-3xl border border-[#16365c] overflow-hidden shadow-xl transform md:-translate-y-4 flex flex-col h-full relative">
+            <div class="absolute top-0 inset-x-0 h-1 bg-gold"></div>
+            <div class="p-8 flex-grow">
+              <div class="bg-gold/20 text-gold text-xs font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block mb-6">Online | Remote Areas Welcome</div>
+              <h3 class="font-poppins text-2xl font-bold text-white mb-2">Video Consultation</h3>
+              <div class="text-3xl font-bold text-gold mb-6 border-b border-white/10 pb-6">PKR 1,000</div>
+              <p class="text-slate-300 leading-relaxed mb-8">Virtual clinic setup to eradicate distance between patient and doctor. Serving far-flung rural areas of Pakistan. Hassle-free consultation with a certified medical professional.</p>
+            </div>
+            <div class="px-8 pb-8 mt-auto">
+              <a href="https://wa.me/923480403153?text=Hello%20Dr.%20Farhan%2C%20I%20would%20like%20to%20book%20a%20Video%20Consultation%20(PKR%201%2C000)." target="_blank" class="block w-full bg-gold text-navy font-semibold py-4 rounded-xl text-center hover:bg-amber-400 transition-colors">Book Video Call</a>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="fade-in bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full group">
+            <div class="p-8 flex-grow">
+              <div class="bg-purple-50 text-purple-600 text-xs font-bold uppercase tracking-wider py-1.5 px-3 rounded-full inline-block mb-6">Premium Facility</div>
+              <h3 class="font-poppins text-2xl font-bold text-navy mb-2">Farooq Hospital DHA</h3>
+              <div class="text-3xl font-bold text-navy mb-6 border-b border-slate-100 pb-6">PKR 3,000</div>
+              <p class="text-slate-600 leading-relaxed mb-8">Consult Dr. Farhan at Farooq Hospital DHA — a luxury facility with modern medical equipment, labs, radiology, and pharmacy on site.</p>
+            </div>
+            <div class="px-8 pb-8 mt-auto">
+              <a href="https://wa.me/923480403153?text=Hello%20Dr.%20Farhan%2C%20I%20would%20like%20to%20book%20a%20consultation%20at%20Farooq%20Hospital%20DHA%20(PKR%203%2C000)." target="_blank" class="block w-full bg-navy text-white font-semibold py-4 rounded-xl text-center group-hover:bg-blue-900 transition-colors flex items-center justify-center gap-2">Book Hospital Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. WHY CHOOSE DOCTOR -->
+    <section class="py-20 lg:py-32 bg-navy text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16 fade-in">
+          <h2 class="font-poppins text-3xl md:text-4xl font-bold mb-6">Why Patients Trust Dr. Farhan</h2>
+          <div class="w-20 h-1.5 bg-gold rounded-full mx-auto"></div>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+          <!-- Features -->
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors fade-in">
+            <svg class="w-6 h-6 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-medium text-lg text-slate-200">Proper & Accurate Diagnosis</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors fade-in">
+            <svg class="w-6 h-6 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-medium text-lg text-slate-200">Kind & Gentle Doctor</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors fade-in">
+            <svg class="w-6 h-6 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-medium text-lg text-slate-200">Thorough Consultations</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors fade-in">
+            <svg class="w-6 h-6 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-medium text-lg text-slate-200">Cooperative & Attentive</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors fade-in">
+            <svg class="w-6 h-6 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-medium text-lg text-slate-200">Warm, Comfortable Environment</span>
+          </div>
+          <div class="bg-white/5 border border-white/10 p-6 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-colors fade-in">
+            <svg class="w-6 h-6 text-gold shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span class="font-medium text-lg text-slate-200">Holistic Health Management</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PATIENT REVIEWS -->
+    <section id="reviews" class="py-20 lg:py-32 bg-slate-50 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 fade-in">
+          <div>
+            <h2 class="font-poppins text-3xl md:text-4xl font-bold text-navy mb-4">What Patients Say</h2>
+            <div class="flex items-center gap-3 text-lg font-medium text-slate-600">
+              <div class="flex gap-1 text-gold">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+              </div>
+              <span>4.9 / 5 — 46 Reviews</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="snap-x-container pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 gap-6 fade-in">
+          <!-- Review 1 -->
+          <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 min-w-[300px] w-[85vw] sm:w-[400px] snap-center shrink-0 flex flex-col">
+            <div class="flex text-gold mb-4 gap-1">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3..."></path></svg>
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-slate-600 text-lg italic mb-8 flex-grow">"I had a truly exceptional experience with Dr. Farhan. He exuded professionalism, warmth, and meticulous attention to detail. He took ample time to understand my concerns and offered comprehensive explanations at every step."</p>
+            <div class="mt-auto">
+              <h4 class="font-bold text-navy font-poppins">Hamza Dilnawaz</h4>
+              <p class="text-sm text-slate-500">2 weeks ago</p>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 min-w-[300px] w-[85vw] sm:w-[400px] snap-center shrink-0 flex flex-col">
+            <div class="flex text-gold mb-4 gap-1">
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-slate-600 text-lg italic mb-8 flex-grow">"The doctor was kind, patient, and listened carefully to my concerns. The consultation was thorough and helpful. Highly recommended!"</p>
+            <div class="mt-auto">
+              <h4 class="font-bold text-navy font-poppins">Ali Raza</h4>
+              <p class="text-sm text-slate-500">5 months ago</p>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 min-w-[300px] w-[85vw] sm:w-[400px] snap-center shrink-0 flex flex-col">
+            <div class="flex text-gold mb-4 gap-1">
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-slate-600 text-lg italic mb-8 flex-grow">"Dr. Farhan is extremely cooperative and kind-hearted. His way of talking is very friendly and comforting. He always gives proper time and attention."</p>
+            <div class="mt-auto">
+              <h4 class="font-bold text-navy font-poppins">Shahnaz Akhter <span class="text-sm font-normal text-slate-500">(via Ali Abbas)</span></h4>
+              <p class="text-sm text-slate-500">6 months ago</p>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 min-w-[300px] w-[85vw] sm:w-[400px] snap-center shrink-0 flex flex-col">
+            <div class="flex text-gold mb-4 gap-1">
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="text-slate-600 text-lg italic mb-8 flex-grow">"I want to express heartfelt gratitude to Dr. Farhan for exceptional support and care. His competence, humility, and encouragement have been instrumental in my healing journey."</p>
+            <div class="mt-auto">
+              <h4 class="font-bold text-navy font-poppins">My Bestie</h4>
+              <p class="text-sm text-slate-500">9 months ago</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8 fade-in">
+          <a href="#" class="inline-block bg-white text-navy border-2 border-navy font-semibold px-8 py-3 rounded-full hover:bg-slate-50 transition-colors">See All Reviews on Google</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT / BOOKING SECTION -->
+    <section id="contact" class="py-20 lg:py-32 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="font-poppins text-3xl md:text-5xl font-bold text-navy mb-6 fade-in">Book Your Appointment Today</h2>
+        <p class="text-lg text-slate-600 mb-12 max-w-2xl mx-auto fade-in">Choose your preferred consultation type and reach out directly. Quick response guaranteed.</p>
+
+        <div class="space-y-4 max-w-xl mx-auto fade-in">
+          <a href="https://wa.me/923480403153?text=Book%20In-Clinic" target="_blank" class="flex items-center justify-between bg-emerald-500 hover:bg-emerald-600 text-white p-6 rounded-2xl transition-all shadow-md hover:shadow-lg">
+            <div class="flex items-center gap-4 text-left">
+              <div class="bg-white/20 p-3 rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <div class="font-bold text-lg">Book In-Clinic</div>
+                <div class="text-emerald-100 text-sm">Response within minutes</div>
+              </div>
+            </div>
+            <div class="font-bold text-xl">PKR 2,000</div>
+          </a>
+
+          <a href="https://wa.me/923480403153?text=Book%20Video%20Call" target="_blank" class="flex items-center justify-between bg-emerald-500 hover:bg-emerald-600 text-white p-6 rounded-2xl transition-all shadow-md hover:shadow-lg">
+            <div class="flex items-center gap-4 text-left">
+              <div class="bg-white/20 p-3 rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+              </div>
+              <div>
+                <div class="font-bold text-lg">Book Video Call</div>
+                <div class="text-emerald-100 text-sm">Anywhere in Pakistan</div>
+              </div>
+            </div>
+            <div class="font-bold text-xl">PKR 1,000</div>
+          </a>
+
+          <a href="https://wa.me/923480403153?text=Book%20Hospital" target="_blank" class="flex flex-col sm:flex-row items-start sm:items-center justify-between bg-emerald-500 hover:bg-emerald-600 text-white p-6 rounded-2xl transition-all shadow-md hover:shadow-lg gap-4 sm:gap-0">
+            <div class="flex items-center gap-4 text-left">
+              <div class="bg-white/20 p-3 rounded-full">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+              </div>
+              <div>
+                <div class="font-bold text-lg">Book at Farooq Hospital DHA</div>
+                <div class="text-emerald-100 text-sm">Premium Hospital Facility</div>
+              </div>
+            </div>
+            <div class="font-bold text-xl w-full sm:w-auto text-left sm:text-right">PKR 3,000</div>
+          </a>
+        </div>
+
+        <div class="mt-12 inline-flex items-center gap-2 bg-slate-50 px-6 py-3 rounded-full text-slate-600 fade-in">
+          <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <span>Also available at <strong>Farooq Hospital, DHA</strong></span>
+        </div>
+        
+        <p class="mt-6 text-sm text-slate-500 fade-in">Appointments available 7 days a week.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. FOOTER -->
+  <footer class="bg-[#051426] text-white py-12 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-8 mb-8 border-b border-white/10 pb-8">
+        <div class="text-center md:text-left">
+          <h2 class="font-poppins font-bold text-xl mb-1">Dr. Farhan | General Physician</h2>
+        </div>
+        
+        <div class="flex flex-wrap justify-center gap-6">
+          <a href="#home" class="text-slate-400 hover:text-white transition-colors">Home</a>
+          <a href="#services" class="text-slate-400 hover:text-white transition-colors">Services</a>
+          <a href="#reviews" class="text-slate-400 hover:text-white transition-colors">Reviews</a>
+          <a href="#contact" class="text-slate-400 hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <div class="flex items-center gap-2 text-slate-300"><span>⭐ Rated 4.9/5 by 46+ Patients</span></div>
+      </div>
+      <div class="text-center text-sm text-slate-500">
+        © 2025 Dr. Farhan Medical Consultations. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+    
+    menuBtn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+    
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
